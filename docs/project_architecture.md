@@ -20,7 +20,7 @@ flowchart LR
 | Layer | Main component | Purpose |
 |---|---|---|
 | Source | Yelp JSON files | Provide business and review records |
-| Extract | Python notebook | Split the multi-gigabyte review file into manageable parts |
+| Extract | Python notebook | Split the multi-gigabyte review file into manageable 10 parts |
 | Raw storage | Amazon S3 | Store the original JSON files before warehouse loading |
 | Ingestion | Snowflake stage and `COPY INTO` | Load semi-structured JSON into `VARIANT` columns |
 | Transformation | Snowflake SQL | Parse JSON fields and create typed analytics tables |
