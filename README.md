@@ -167,52 +167,6 @@ The Snowflake analysis answers the following questions:
 8. What is the average rating for businesses with at least 100 reviews?
 9. Which businesses receive the highest number of positive reviews?
 
-## Repository Structure
-
-```text
-Yelp-Business-Intelligence-Analytics-Platform-ELT-Project/
-├── .github/workflows/
-│   └── repository-checks.yml
-├── assets/
-│   ├── branding/
-│   ├── dashboards/
-│   └── diagrams/
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── README.md
-├── docs/
-│   ├── business_requirements.md
-│   ├── dashboard_documentation.md
-│   ├── data_dictionary.md
-│   ├── data_model.md
-│   ├── key_insights.md
-│   └── project_architecture.md
-├── notebooks/
-│   └── 01_split_large_review_json.ipynb
-├── power-bi/
-│   ├── README.md
-│   ├── dax_measures.dax
-│   └── yelp_theme.json
-├── scripts/
-│   └── check_for_secrets.py
-├── sql/
-│   ├── 00_setup_database.sql
-│   ├── 01_create_raw_tables.sql
-│   ├── 02_load_from_s3.sql
-│   ├── 03_create_sentiment_udf.sql
-│   ├── 04_transform_analytics_tables.sql
-│   ├── 05_create_power_bi_views.sql
-│   ├── 06_data_quality_checks.sql
-│   ├── 07_business_analysis.sql
-│   └── README.md
-├── .env.example
-├── .gitignore
-├── LICENSE
-├── README.md
-├── SECURITY.md
-└── requirements.txt
-```
 
 ## How to Run the Project
 
