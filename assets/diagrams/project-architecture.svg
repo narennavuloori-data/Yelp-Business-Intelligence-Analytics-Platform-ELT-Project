@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="470" viewBox="0 0 1600 470">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#FF1A1A"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="470" rx="26" fill="#F7F7F7"/>
+  <text x="800" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111111">End-to-End ELT Architecture</text>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="55" y="145" width="190" height="150" rx="18" fill="#FFFFFF" stroke="#FF1A1A" stroke-width="4"/>
+    <text x="150" y="195" font-size="21" font-weight="700" fill="#111111">Yelp Dataset</text>
+    <text x="150" y="230" font-size="17" fill="#555555">Business JSON</text>
+    <text x="150" y="257" font-size="17" fill="#555555">Review JSON (~5 GB)</text>
+
+    <rect x="285" y="145" width="190" height="150" rx="18" fill="#FFFFFF" stroke="#FF1A1A" stroke-width="4"/>
+    <text x="380" y="195" font-size="21" font-weight="700" fill="#111111">Python</text>
+    <text x="380" y="230" font-size="17" fill="#555555">Count JSON lines</text>
+    <text x="380" y="257" font-size="17" fill="#555555">Split into 10 files</text>
+
+    <rect x="515" y="145" width="190" height="150" rx="18" fill="#FFFFFF" stroke="#FF1A1A" stroke-width="4"/>
+    <text x="610" y="195" font-size="21" font-weight="700" fill="#111111">Amazon S3</text>
+    <text x="610" y="230" font-size="17" fill="#555555">Raw storage</text>
+    <text x="610" y="257" font-size="17" fill="#555555">Business + reviews</text>
+
+    <rect x="745" y="145" width="190" height="150" rx="18" fill="#FFFFFF" stroke="#FF1A1A" stroke-width="4"/>
+    <text x="840" y="195" font-size="21" font-weight="700" fill="#111111">Snowflake Load</text>
+    <text x="840" y="230" font-size="17" fill="#555555">External stage</text>
+    <text x="840" y="257" font-size="17" fill="#555555">COPY INTO VARIANT</text>
+
+    <rect x="975" y="145" width="190" height="150" rx="18" fill="#FFFFFF" stroke="#FF1A1A" stroke-width="4"/>
+    <text x="1070" y="195" font-size="21" font-weight="700" fill="#111111">Transform</text>
+    <text x="1070" y="230" font-size="17" fill="#555555">SQL parsing</text>
+    <text x="1070" y="257" font-size="17" fill="#555555">TextBlob UDF</text>
+
+    <rect x="1205" y="145" width="190" height="150" rx="18" fill="#FFFFFF" stroke="#FF1A1A" stroke-width="4"/>
+    <text x="1300" y="195" font-size="21" font-weight="700" fill="#111111">Analytics</text>
+    <text x="1300" y="230" font-size="17" fill="#555555">Typed tables</text>
+    <text x="1300" y="257" font-size="17" fill="#555555">Reporting views</text>
+
+    <rect x="1420" y="145" width="140" height="150" rx="18" fill="#FF1A1A"/>
+    <text x="1490" y="205" font-size="21" font-weight="700" fill="#FFFFFF">Power BI</text>
+    <text x="1490" y="242" font-size="17" fill="#FFFFFF">4 report</text>
+    <text x="1490" y="268" font-size="17" fill="#FFFFFF">pages</text>
+  </g>
+
+  <g stroke="#FF1A1A" stroke-width="4" marker-end="url(#arrow)">
+    <line x1="245" y1="220" x2="275" y2="220"/>
+    <line x1="475" y1="220" x2="505" y2="220"/>
+    <line x1="705" y1="220" x2="735" y2="220"/>
+    <line x1="935" y1="220" x2="965" y2="220"/>
+    <line x1="1165" y1="220" x2="1195" y2="220"/>
+    <line x1="1395" y1="220" x2="1410" y2="220"/>
+  </g>
+
+  <text x="800" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555555">Extract and split → Store → Load → Transform → Analyse → Visualise</text>
+</svg>

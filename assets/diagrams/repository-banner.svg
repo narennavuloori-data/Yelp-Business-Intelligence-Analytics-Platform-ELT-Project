@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360">
+  <rect width="1400" height="360" rx="28" fill="#111111"/>
+  <circle cx="1175" cy="180" r="250" fill="#FF1A1A" opacity="0.17"/>
+  <circle cx="1280" cy="60" r="110" fill="#FF1A1A" opacity="0.22"/>
+  <rect x="70" y="62" width="16" height="236" rx="8" fill="#FF1A1A"/>
+  <text x="125" y="125" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="51" font-weight="700">Yelp Business Intelligence</text>
+  <text x="125" y="188" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="51" font-weight="700">Analytics Platform</text>
+  <text x="125" y="242" fill="#FFB8B8" font-family="Arial, sans-serif" font-size="27">End-to-End Cloud ELT Portfolio Project</text>
+  <text x="125" y="290" fill="#D9D9D9" font-family="Arial, sans-serif" font-size="22">Python  •  AWS S3  •  Snowflake  •  SQL  •  NLP  •  Power BI</text>
+</svg>

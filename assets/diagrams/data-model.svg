@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#FF1A1A"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="520" rx="24" fill="#F7F7F7"/>
+  <text x="600" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111111">Analytics and Power BI Data Model</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="110" width="330" height="310" rx="18" fill="#FFFFFF" stroke="#FF1A1A" stroke-width="4"/>
+    <rect x="70" y="110" width="330" height="58" rx="18" fill="#FF1A1A"/>
+    <text x="235" y="148" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF">BUSINESSES</text>
+    <text x="95" y="208" font-size="18" fill="#111111">PK  business_id</text>
+    <text x="95" y="245" font-size="18" fill="#555555">name</text>
+    <text x="95" y="278" font-size="18" fill="#555555">city</text>
+    <text x="95" y="311" font-size="18" fill="#555555">state</text>
+    <text x="95" y="344" font-size="18" fill="#555555">stars</text>
+    <text x="95" y="377" font-size="18" fill="#555555">categories</text>
+
+    <rect x="800" y="90" width="330" height="340" rx="18" fill="#FFFFFF" stroke="#FF1A1A" stroke-width="4"/>
+    <rect x="800" y="90" width="330" height="58" rx="18" fill="#FF1A1A"/>
+    <text x="965" y="128" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF">REVIEWS</text>
+    <text x="825" y="188" font-size="18" fill="#111111">FK  business_id</text>
+    <text x="825" y="221" font-size="18" fill="#555555">review_date</text>
+    <text x="825" y="254" font-size="18" fill="#555555">user_id</text>
+    <text x="825" y="287" font-size="18" fill="#555555">review_stars</text>
+    <text x="825" y="320" font-size="18" fill="#555555">review_text</text>
+    <text x="825" y="353" font-size="18" fill="#555555">review_length</text>
+    <text x="825" y="386" font-size="18" fill="#555555">sentiments</text>
+
+    <rect x="440" y="300" width="310" height="150" rx="18" fill="#FFFFFF" stroke="#7A2026" stroke-width="4"/>
+    <rect x="440" y="300" width="310" height="55" rx="18" fill="#7A2026"/>
+    <text x="595" y="336" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">BUSINESS CATEGORY BRIDGE</text>
+    <text x="465" y="392" font-size="18" fill="#111111">FK  business_id</text>
+    <text x="465" y="425" font-size="18" fill="#555555">category</text>
+  </g>
+
+  <line x1="400" y1="215" x2="790" y2="215" stroke="#FF1A1A" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="455" y="196" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#111111">1</text>
+  <text x="755" y="196" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#111111">*</text>
+
+  <line x1="400" y1="350" x2="430" y2="350" stroke="#7A2026" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="405" y="334" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111111">1 : *</text>
+</svg>

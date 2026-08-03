@@ -1,0 +1,158 @@
+// Yelp Business Intelligence Analytics Platform
+// Table names expected: BUSINESSES and REVIEWS
+// Review Growth % is intentionally not included.
+
+// Executive Overview
+
+Total Businesses =
+COUNTROWS(BUSINESSES)
+
+Total Reviews =
+COUNTROWS(REVIEWS)
+
+Active Customers =
+DISTINCTCOUNT(REVIEWS[user_id])
+
+Average Business Rating =
+AVERAGE(BUSINESSES[stars])
+
+Average Review Rating =
+AVERAGE(REVIEWS[review_stars])
+
+Average Rating =
+ROUND([Average Review Rating], 2)
+
+Positive Reviews =
+CALCULATE(
+    [Total Reviews],
+    REVIEWS[sentiments] = "Positive"
+)
+
+Neutral Reviews =
+CALCULATE(
+    [Total Reviews],
+    REVIEWS[sentiments] = "Neutral"
+)
+
+Negative Reviews =
+CALCULATE(
+    [Total Reviews],
+    REVIEWS[sentiments] = "Negative"
+)
+
+Positive Review % =
+DIVIDE([Positive Reviews], [Total Reviews])
+
+Average Reviews per Business =
+DIVIDE([Total Reviews], [Total Businesses])
+
+Sentiment Score =
+DIVIDE(
+    [Positive Reviews] - [Negative Reviews],
+    [Total Reviews]
+)
+
+Business Rating Difference =
+[Average Business Rating] - [Average Review Rating]
+
+// Business Performance
+
+Review Count =
+[Total Reviews]
+
+Average Rating Business =
+AVERAGE(REVIEWS[review_stars])
+
+Five Star Reviews =
+CALCULATE(
+    [Review Count],
+    REVIEWS[review_stars] = 5
+)
+
+Five Star % =
+DIVIDE([Five Star Reviews], [Review Count])
+
+Positive Sentiment % =
+DIVIDE([Positive Reviews], [Review Count])
+
+Business Rank =
+RANKX(
+    ALLSELECTED(BUSINESSES[name]),
+    [Review Count],
+    ,
+    DESC,
+    DENSE
+)
+
+Top 10 Business =
+IF([Business Rank] <= 10, "Top 10", "Others")
+
+// Customer and Sentiment
+
+Distinct Customers =
+DISTINCTCOUNT(REVIEWS[user_id])
+
+Reviews per Customer =
+DIVIDE([Total Reviews], [Distinct Customers])
+
+Positive Count =
+CALCULATE(
+    [Total Reviews],
+    REVIEWS[sentiments] = "Positive"
+)
+
+Neutral Count =
+CALCULATE(
+    [Total Reviews],
+    REVIEWS[sentiments] = "Neutral"
+)
+
+Negative Count =
+CALCULATE(
+    [Total Reviews],
+    REVIEWS[sentiments] = "Negative"
+)
+
+Positive % =
+DIVIDE([Positive Count], [Total Reviews])
+
+Neutral % =
+DIVIDE([Neutral Count], [Total Reviews])
+
+Negative % =
+DIVIDE([Negative Count], [Total Reviews])
+
+Average Review Length =
+AVERAGEX(
+    REVIEWS,
+    LEN(REVIEWS[review_text])
+)
+
+// Geographic and Category
+
+Business Count =
+COUNTROWS(BUSINESSES)
+
+City Average Rating =
+AVERAGE(BUSINESSES[stars])
+
+Total Reviews City =
+[Total Reviews]
+
+Reviews per Business =
+DIVIDE([Total Reviews City], [Business Count])
+
+Average Review Rating City =
+AVERAGE(REVIEWS[review_stars])
+
+Business Share % =
+DIVIDE(
+    [Business Count],
+    CALCULATE([Business Count], ALL(BUSINESSES))
+)
+
+Total States =
+DISTINCTCOUNT(BUSINESSES[state])
+
+Total Cities =
+DISTINCTCOUNT(BUSINESSES[city])

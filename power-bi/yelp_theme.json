@@ -1,0 +1,17 @@
+{
+  "name": "Yelp Business Intelligence",
+  "dataColors": [
+    "#FF1A1A",
+    "#7A2026",
+    "#2ECC71",
+    "#F2C94C",
+    "#2F80ED",
+    "#8E44AD"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#111111",
+  "tableAccent": "#FF1A1A",
+  "good": "#2ECC71",
+  "neutral": "#F2C94C",
+  "bad": "#7A2026"
+}
